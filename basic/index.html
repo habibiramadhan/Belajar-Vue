@@ -8,6 +8,11 @@
 			font-family:  sans-serif;
 			margin: 5%;
 		}
+		.active{
+			background:salmon;
+			padding: 5px;
+			border: 0;
+		}
 	</style>
 </head>
 <body>
@@ -18,9 +23,13 @@
 		<p>Bilangan ini {{ infobilangan }}</p>
 		<p>The progresive javascript framework</p>
 		<p>
-			<button v-on:click="bilangan++">Ditekan</button>
+			<button @click="handleClick">Ditekan</button>
 		</p>
-		<img :src="gambar" alt="" width="500">
+		<img :src="gambar" alt="" width="500"> <br>
+
+		<button v-bind:class="{active: menu == 'home'}">Home</button>
+		<Button v-bind:class="{active: menu == 'about'}">Abaut</Button>
+		<button :class="{active: menu == 'blog'}">Blog</button>
 	</header>
 
 	<footer id="footer">
@@ -41,7 +50,8 @@
 		bilangan: 4,
 		// Directive
 		link: '<a href="https://github.com/habibiramadhan">Ini Github saya Guys</a>',
-		gambar: 'img/gambar2.jpeg'
+		gambar: 'img/gambar1.png',
+		menu: 'home'
 	}
 	
 	const vm = new Vue({
@@ -56,6 +66,10 @@
 			ubahNama:function(namaBaru){
 				this.name = namaBaru
 				return this.getname()
+			},
+			handleClick: function(){
+				this.bilangan++
+				this.gambar = 'img/gambar3.png'
 			}
 		},
 		// menambahkan computed property
