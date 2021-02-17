@@ -13,10 +13,14 @@
 <body>
 	<div id="app">
 	<header width="80">
-		<h1 v-html="link" ></h1>
+		<h1 v-text="bilangan" ></h1>
 		<h3>{{bilangan}}</h3>
 		<p>Bilangan ini {{ infobilangan }}</p>
 		<p>The progresive javascript framework</p>
+		<p>
+			<button v-on:click="bilangan++">Ditekan</button>
+		</p>
+		<img :src="gambar" alt="" width="500">
 	</header>
 
 	<footer id="footer">
@@ -36,7 +40,8 @@
 		namaBelakang : 'ilahi', 
 		bilangan: 4,
 		// Directive
-		link: '<a href="https://github.com/habibiramadhan">Ini Github saya Guys</a>'
+		link: '<a href="https://github.com/habibiramadhan">Ini Github saya Guys</a>',
+		gambar: 'img/gambar2.jpeg'
 	}
 	
 	const vm = new Vue({
