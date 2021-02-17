@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Belajar VueJS</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+	<style type="text/css">
+		body{
+			font-family:  sans-serif;
+			margin: 5%;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+	<header width="80">
+		<h1>{{ name }}</h1>
+		<p>The progresive javascript framework</p>
+	</header>
+
+	<footer id="footer">
+		<p>Copyright 2k21</p>
+	</footer>
+	</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	const member = {
+		name : 'Udin Margaret',
+		pesan : "Hello saya adalah pegawi negri sipil"
+	}
+	
+	const vm = new Vue({
+		el:'#app',
+		data :member
+	})
+</script>
