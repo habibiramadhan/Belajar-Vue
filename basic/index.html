@@ -27,9 +27,20 @@
 		</p>
 		<img :src="gambar" alt="" width="500"> <br>
 
-		<button v-bind:class="{active: menu == 'home'}">Home</button>
-		<Button v-bind:class="{active: menu == 'about'}">Abaut</Button>
-		<button :class="{active: menu == 'blog'}">Blog</button>
+		<button v-bind:class="{active: menu == 'home'} " @click = 'menu = "home"'>Home</button>
+		<Button v-bind:class="{active: menu == 'about'} "@click = 'menu = "about"'>Abaut</Button>
+		<button :class="{active: menu == 'blog'}"@click = 'menu = "blog"'>Blog</button>
+
+		<br>
+		<h1 v-text = "name"></h1>
+		<input type="text" v-model = "name">
+		<br>
+		<p>{{kelas}}</p>
+		<div>
+			<label for=""><input type="checkbox" value="react" v-model="kelas">react</label>
+			<label for=""><input type="checkbox" value="vuejs" v-model="kelas">vuejs</label>
+			<label for=""><input type="checkbox" value="agnular" v-model="kelas">agnular</label>
+		</div>
 	</header>
 
 	<footer id="footer">
@@ -51,7 +62,8 @@
 		// Directive
 		link: '<a href="https://github.com/habibiramadhan">Ini Github saya Guys</a>',
 		gambar: 'img/gambar1.png',
-		menu: 'home'
+		menu: 'home',
+		kelas: []
 	}
 	
 	const vm = new Vue({
