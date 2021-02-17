@@ -13,7 +13,7 @@
 <body>
 	<div id="app">
 	<header width="80">
-		<h1>{{ name }}</h1>
+		<h1>{{ getname() }}</h1>
 		<p>The progresive javascript framework</p>
 	</header>
 
@@ -33,6 +33,17 @@
 	
 	const vm = new Vue({
 		el:'#app',
-		data :member
+		data :member,
+		// Menambahkan Method
+		methods:{
+			getname: function(){
+				return 'Hello ,' + this.name	
+			},
+			// Menambahkan Parameter di Metod
+			ubahNama:function(namaBaru){
+				this.name = namaBaru
+				return this.getname()
+			}
+		}
 	})
 </script>
